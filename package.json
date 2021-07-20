@@ -1,0 +1,33 @@
+{
+  "name": "im-ratio-panel-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "sign": "grafana-toolkit plugin:sign",
+    "start": "yarn watch"
+  },
+  "author": "Steffen Kowalski",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@grafana/data": "8.0.2",
+    "@grafana/toolkit": "8.0.2",
+    "@grafana/ui": "8.0.2",
+    "emotion": "10.0.27",
+    "node-sass": "4.14.1",
+    "tslib": "2.2.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-common-types": "./fontawesome-common-types",
+    "@fortawesome/fontawesome-free": "./fontawesome-free",
+    "@fortawesome/fontawesome-svg-core": "./fontawesome-svg-core",
+    "@fortawesome/free-solid-svg-icons": "./free-solid-svg-icons",
+    "@fortawesome/react-fontawesome": "file:react-fontawesome"
+  }
+}

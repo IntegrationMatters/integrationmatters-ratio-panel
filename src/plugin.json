@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "Ratio",
+  "id": "integrationmatters-ratio-panel",
+  "info": {
+    "description": "",
+    "author": {
+      "name": "Integration Matters",
+      "url": "https://www.integrationmatters.com/"
+    },
+    "keywords": [
+      "flows",
+      "ratio"
+    ],
+    "logos": {
+      "small": "assets/images/logo.svg",
+      "large": "assets/images/logo.svg"
+    },
+    "links": [],
+    "screenshots": [
+      {
+        "name": "Ratio overview",
+        "path": "assets/images/ratio-template.png"
+      }
+    ],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  }
+}
