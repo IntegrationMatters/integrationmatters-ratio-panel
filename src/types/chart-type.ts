@@ -1,1 +1,1 @@
-export type ChartType = "bar" | "area";
+export type ChartType = 'bar' | 'area';

@@ -2,21 +2,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PanelProps } from '@grafana/data';
 import React from 'react';
 import './Ratio.scss';
-import {AbsoluteNumbers} from "./helper/absolute-numbers";
-import {Changes} from "./helper/changes";
-import {DataInspector} from "./helper/data-inspector";
-import {Percentages} from "./helper/percentages";
-import {Styles} from "./helper/styles";
+import { AbsoluteNumbers } from './helper/absolute-numbers';
+import { Changes } from './helper/changes';
+import { DataInspector } from './helper/data-inspector';
+import { Percentages } from './helper/percentages';
+import { Styles } from './helper/styles';
+import { RationOptions } from './types/ration-options';
 
-export const Ratio: React.FC<PanelProps> = ({ width, height, data }) => {
+export const Ratio: React.FC<PanelProps<RationOptions>> = ({ width, height, data, options }) => {
   const wrapperStyle = {
     width: `${width}px`,
     height: `${height}px`,
   };
 
-  const totalTarget = DataInspector.getTarget('total-filtered', data.request);
-  const totalStatus = DataInspector.getStatus(totalTarget);
-  const trendDirection = DataInspector.getTrendDirection(totalStatus);
+  const status = options.status;
+
+  const trendDirection = DataInspector.getTrendDirection(status);
 
   const total = AbsoluteNumbers.getTotal(data.series, 'total');
   const totalFiltered = AbsoluteNumbers.getTotal(data.series, 'total-filtered');
@@ -32,9 +33,9 @@ export const Ratio: React.FC<PanelProps> = ({ width, height, data }) => {
   const wrapperClassNames = Styles.getWrapperClassNames('im-ratio', height);
   const changeClassNames = Styles.getChangeValueClassNames(changeOperator, trendDirection);
   const trendClassNames = Styles.getTrendClassNames(changeOperator, trendDirection);
-  const mainIconClassNames = Styles.getMainIconClassNames(totalStatus);
+  const mainIconClassNames = Styles.getMainIconClassNames(status);
   const trendIcon = Styles.getTrendIcon(changeOperator);
-  const mainIcon = Styles.getMainIcon(totalStatus);
+  const mainIcon = Styles.getMainIcon(status);
 
   return (
     <div style={wrapperStyle} className={wrapperClassNames}>
